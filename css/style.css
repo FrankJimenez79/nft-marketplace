@@ -228,7 +228,7 @@ body::before {
   content: "";
   background-color: #2e2f38;
   width: 40%;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -241,6 +241,13 @@ body::before {
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.container::before {
+  content: url(../img/artzie..png);
+  position: absolute;
+  right: 0px;
+  top: 60px;
+  z-index: 2;
 }
 
 .header {
@@ -260,6 +267,10 @@ body::before {
   color: #2e2f38;
   font-size: 1.1rem;
   text-decoration: none;
+  transition: color 0.5s ease;
+}
+.header nav.main-menu ul li a:hover {
+  color: #fa504d;
 }
 
 .login-menu {
@@ -274,6 +285,10 @@ body::before {
 .login-menu ul li a {
   color: #ffffff;
   text-decoration: none;
+  transition: color 0.5s ease;
+}
+.login-menu ul li a:hover {
+  color: #fa504d;
 }
 .login-menu ul li a.sign-in {
   display: inline-block;
@@ -296,6 +311,7 @@ main {
 section.principal {
   grid-column: 1/span 1;
   margin-bottom: 70px;
+  padding-top: 50px;
 }
 section.principal h1 {
   margin: 0;
@@ -306,6 +322,11 @@ section.principal h1 {
   margin-top: 20px;
   margin-bottom: 20px;
   color: #2e2f38;
+}
+section.principal h1::before {
+  content: url(../img/destacado.svg);
+  position: absolute;
+  left: 185px;
 }
 section.principal p {
   color: #8e8e8e;
@@ -337,14 +358,13 @@ section.principal a.btn:hover {
   background-color: #ffffff;
   color: #fa504d;
 }
-section.principal a {
+section.principal a.learn {
   padding-left: 30px;
   color: #2e2f38;
+  transition: color 0.5s ease;
 }
-
-article.nft {
-  grid-column: 2/span 1;
-  grid-row: 1/span 2;
+section.principal a.learn:hover {
+  color: #fa504d;
 }
 
 section.image {
@@ -365,4 +385,108 @@ section.image div.images img {
   width: 45%;
   border: 2px solid #8e8e8e;
   padding: 4px;
+}
+
+article.nft {
+  grid-column: 2/span 1;
+  grid-row: 1/span 2;
+  padding-left: 80px;
+  padding-right: 20px;
+}
+article.nft .container-img img {
+  width: 100%;
+  padding-left: 10px;
+}
+article.nft .nft-data {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: -40px;
+  position: relative;
+}
+article.nft .nft-data .nft-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+article.nft .nft-data .nft-header .nft-owner {
+  display: flex;
+}
+article.nft .nft-data .nft-header .nft-owner img {
+  padding: 10px;
+  width: 80px;
+}
+article.nft .nft-data .nft-header .nft-owner .nft-owner-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+article.nft .nft-data .nft-header .nft-owner .nft-owner-data p.username {
+  color: #8e8e8e;
+  font-size: 18px;
+  font-weight: 400;
+}
+article.nft .nft-data .nft-header .nft-owner .nft-owner-data p.name {
+  color: #2e2f38;
+  font-size: 24px;
+  font-weight: 600;
+}
+article.nft .nft-data .nft-header .nft-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+article.nft .nft-data .nft-header .nft-price p.current {
+  color: #8e8e8e;
+  font-size: 18px;
+  font-weight: 400;
+}
+article.nft .nft-data .nft-header .nft-price p.price {
+  color: #2e2f38;
+  font-size: 24px;
+  font-weight: 600;
+}
+article.nft .nft-data .nft-buttons {
+  display: flex;
+  gap: 88px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+article.nft .nft-data .nft-buttons a.bid {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #fa504d;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color 0.5s ease;
+  text-decoration: none;
+  padding: 10px 100px;
+}
+article.nft .nft-data .nft-buttons a.bid:hover {
+  background-color: #ffffff;
+  color: #fa504d;
+}
+article.nft .nft-data .nft-buttons a.view {
+  color: #fa504d;
+  font-weight: 600;
+  text-decoration: none;
+}
+article.nft .nft-numbers {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 80px;
+}
+article.nft .nft-numbers div {
+  color: #8e8e8e;
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+article.nft .nft-numbers span {
+  color: #fa504d;
+  font-size: 32px;
+  font-weight: 600;
+  padding-right: 5px;
 }/*# sourceMappingURL=style.css.map */

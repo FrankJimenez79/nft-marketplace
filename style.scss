@@ -281,7 +281,7 @@ body {
     content: "";
     background-color: $black-color;
     width: 40%;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     bottom: 0;
@@ -295,6 +295,13 @@ body {
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  &::before {
+    content: url(../img/artzie..png);
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    z-index: 2;
+  }
 }
 
 .header {
@@ -312,6 +319,10 @@ body {
       color: $black-color;
       font-size: 1.1rem;
       text-decoration: none;
+      transition: color 0.5s ease;
+      &:hover {
+        color: $red-color;
+      }
     }
   }
 }
@@ -326,6 +337,11 @@ body {
     li a {
       color: $white-color;
       text-decoration: none;
+      transition: color 0.5s ease;
+
+      &:hover {
+        color: $red-color;
+      }
       &.sign-in {
         @include button();
       }
@@ -341,6 +357,7 @@ main {
 section.principal {
   grid-column: 1 / span 1;
   margin-bottom: 70px;
+  padding-top: 50px;
   h1 {
     margin: 0;
     font-size: 65px;
@@ -350,6 +367,11 @@ section.principal {
     margin-top: 20px;
     margin-bottom: 20px;
     color: $black-color;
+    &::before {
+      content: url(../img/destacado.svg);
+      position: absolute;
+      left: 185px;
+    }
   }
   p {
     color: $gray-color;
@@ -372,15 +394,14 @@ section.principal {
     text-decoration: none;
     padding: 15px 60px;
   }
-  a {
+  a.learn {
     padding-left: 30px;
     color: $black-color;
+    transition: color 0.5s ease;
+    &:hover {
+      color: $red-color;
+    }
   }
-}
-
-article.nft {
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 2;
 }
 
 section.image {
@@ -399,6 +420,105 @@ section.image {
       width: 45%;
       border: 2px solid $gray-color;
       padding: 4px;
+    }
+  }
+}
+
+article.nft {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  padding-left: 80px;
+  padding-right: 20px;
+
+  .container-img {
+    img {
+      width: 100%;
+      padding-left: 10px;
+    }
+  }
+  .nft-data {
+    background-color: $white-color;
+    padding: 20px;
+    margin-top: -40px;
+    position: relative;
+    .nft-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      .nft-owner {
+        display: flex;
+        img {
+          padding: 10px;
+          width: 80px;
+        }
+        .nft-owner-data {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-left: 10px;
+          p.username {
+            color: $gray-color;
+            font-size: 18px;
+            font-weight: 400;
+          }
+          p.name {
+            color: $black-color;
+            font-size: 24px;
+            font-weight: 600;
+          }
+        }
+      }
+      .nft-price {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p.current {
+          color: $gray-color;
+          font-size: 18px;
+          font-weight: 400;
+        }
+        p.price {
+          color: $black-color;
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+    }
+    .nft-buttons {
+      display: flex;
+      gap: 88px;
+      align-items: center;
+      margin-bottom: 20px;
+      a.bid {
+        @include button();
+        text-decoration: none;
+        padding: 10px 100px;
+      }
+      a.view {
+        color: $red-color;
+        font-weight: 600;
+        text-decoration: none;
+      }
+    }
+  }
+  .nft-numbers {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 80px;
+
+    div {
+      color: $gray-color;
+      font-size: 18px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+    }
+    span {
+      color: $red-color;
+      font-size: 32px;
+      font-weight: 600;
+      padding-right: 5px;
     }
   }
 }
